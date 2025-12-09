@@ -1,4 +1,4 @@
-#include <stdio.h>
+п»ї#include <stdio.h>
 #include <locale.h>
 
 typedef struct {
@@ -20,11 +20,11 @@ int main() {
     Album arr[10];
 
     for (int i = 0; i < n; i++) {
-        printf("\n=== Альбом %d ===\n", i + 1);
+        printf("\n=== РђР»СЊР±РѕРј %d ===\n", i + 1);
         input_album(&arr[i]);
     }
 
-    printf("\nВсе введённые альбомы:\n");
+    printf("\nР’СЃРµ РІРІРµРґС‘РЅРЅС‹Рµ Р°Р»СЊР±РѕРјС‹:\n");
     for (int i = 0; i < n; i++) {
         print_album(arr[i]);
     }
@@ -35,36 +35,36 @@ int main() {
 }
 
 void input_album(Album* a) {
-    printf("Введите название: ");
+    printf("Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ: ");
     fgets(a->title, sizeof(a->title), stdin);
     a->title[strcspn(a->title, "\n")] = '\0';
 
-    printf("Введите год выпуска: ");
+    printf("Р’РІРµРґРёС‚Рµ РіРѕРґ РІС‹РїСѓСЃРєР°: ");
     scanf("%d", &a->year);
     getchar();
 
-    printf("Введите стиль: ");
+    printf("Р’РІРµРґРёС‚Рµ СЃС‚РёР»СЊ: ");
     fgets(a->style, sizeof(a->style), stdin);
     a->style[strcspn(a->style, "\n")] = '\0';
 
-    printf("Введите количество треков: ");
+    printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ С‚СЂРµРєРѕРІ: ");
     scanf("%d", &a->tracks);
 
-    printf("Введите длительность альбома (в минутах): ");
+    printf("Р’РІРµРґРёС‚Рµ РґР»РёС‚РµР»СЊРЅРѕСЃС‚СЊ Р°Р»СЊР±РѕРјР° (РІ РјРёРЅСѓС‚Р°С…): ");
     scanf("%lf", &a->duration);
     getchar();
 }
 
 void print_album(Album a) {
-    printf("\nНазвание: %s\n", a.title);
-    printf("Год выпуска: %d\n", a.year);
-    printf("Стиль: %s\n", a.style);
-    printf("Количество треков: %d\n", a.tracks);
-    printf("Длительность: %.2f минут\n", a.duration);
+    printf("\nРќР°Р·РІР°РЅРёРµ: %s\n", a.title);
+    printf("Р“РѕРґ РІС‹РїСѓСЃРєР°: %d\n", a.year);
+    printf("РЎС‚РёР»СЊ: %s\n", a.style);
+    printf("РљРѕР»РёС‡РµСЃС‚РІРѕ С‚СЂРµРєРѕРІ: %d\n", a.tracks);
+    printf("Р”Р»РёС‚РµР»СЊРЅРѕСЃС‚СЊ: %.2f РјРёРЅСѓС‚\n", a.duration);
 }
 
 void print_suitable_albums(Album arr[], int n) {
-    printf("\nАльбомы, соответствующие условиям:\n");
+    printf("\nРђР»СЊР±РѕРјС‹, СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёРµ СѓСЃР»РѕРІРёСЏРј:\n");
 
     int found = 0;
     for (int i = 0; i < n; i++) {
@@ -75,6 +75,6 @@ void print_suitable_albums(Album arr[], int n) {
     }
 
     if (!found) {
-        printf("Нет альбомов, подходящих под условия.\n");
+        printf("РќРµС‚ Р°Р»СЊР±РѕРјРѕРІ, РїРѕРґС…РѕРґСЏС‰РёС… РїРѕРґ СѓСЃР»РѕРІРёСЏ.\n");
     }
 }
